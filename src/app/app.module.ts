@@ -14,6 +14,8 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginRegister } from '../pages/login-register/login-register';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { LoginRegister } from '../pages/login-register/login-register';
     HomePage,
     ListPage,
     LoginRegister
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ import { LoginRegister } from '../pages/login-register/login-register';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
+    AuthGuard
   ]
 })
 export class AppModule {}
