@@ -1,0 +1,143 @@
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}   
+[role=button], a, area, button, input:not([type=range]), label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-link:focus, .nav-link:hover {
+    text-decoration: none;
+  }
+  
+  .nav-link.disabled {
+    color: #868e96;
+  }
+  
+  .nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    
+  }
+  
+  .nav-tabs .nav-item {
+    margin-bottom: -1px;
+    width: 50%;
+  }
+  
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+  }
+  
+  .nav-tabs .nav-link.disabled {
+    color: #868e96;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+  
+  .nav-tabs .dropdown-menu {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .nav-pills .nav-link {
+    border-radius: 0.25rem;
+  }
+  
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  .nav-fill .nav-item {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .nav-justified .nav-item {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .tab-content > .tab-pane {
+    display: none;
+  }
+  
+  .tab-content > .active {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
