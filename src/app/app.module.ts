@@ -16,6 +16,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginRegister } from '../pages/login-register/login-register';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { LoginRegisterTabsComponent } from './login-register-tabs/login-register-tabs.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register.form.component';
 
 
 @NgModule({
@@ -23,8 +26,10 @@ import { AuthGuard } from './auth/auth-guard.service';
     MyApp,
     HomePage,
     ListPage,
-    LoginRegister
-    
+    LoginRegister,
+    LoginRegisterTabsComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { AuthGuard } from './auth/auth-guard.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    AuthGuard
+    AuthGuard,
   ]
 })
 export class AppModule {}

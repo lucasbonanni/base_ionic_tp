@@ -8,44 +8,30 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
+    <ion-card id="card-login">
         <ion-card-header>
-            <ul id="UL_1">
-                <li id="LI_2">
-                    <a href="#" id="A_3">Active</a>
-                </li>
-                <li id="LI_4">
-                    <a href="#" id="A_5">Register</a>
-                </li>
-            </ul>
+            <login-register-tabs (onTabChange)="tabChange($event)"></login-register-tabs>
         </ion-card-header>
 
         <ion-card-content>
-            <ion-list>
-
-                <ion-item>
-                    <ion-label floating>email</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-
-                <ion-item>
-                    <ion-label floating>Password</ion-label>
-                    <ion-input type="password"></ion-input>
-                </ion-item>
-
-
+            <div *ngIf="isLoginActive">
+                <login-form [user]="user" (onSubmit)="submitForm($event)"></login-form>
+            </div>
+            <ion-list *ngIf="!isLoginActive">
+                <register-form [user]="user"  (onSubmit)="submitForm($event)"></register-form>
             </ion-list>
-            <button ion-button block medium>Login</button>
-            <ion-item-divider></ion-item-divider>
-            <button ion-button icon-only>
-                <ion-icon name="logo-github"></ion-icon>
-            </button>
-            <button ion-button icon-only (click)="googleLogin()">
-                <ion-icon name="logo-googleplus"></ion-icon>
-            </button>
-            <button ion-button icon-only>
-                <ion-icon name="logo-facebook"></ion-icon>
-            </button>
+            <div>
+                <ion-item-divider></ion-item-divider>
+                <button ion-button icon-only>
+                    <ion-icon name="logo-github"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="googleLogin()">
+                    <ion-icon name="logo-googleplus"></ion-icon>
+                </button>
+                <button ion-button icon-only>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </button>
+            </div>
         </ion-card-content>
     </ion-card>
 </ion-content>
