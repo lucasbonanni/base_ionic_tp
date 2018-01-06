@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-//variable to know if running on development mode
-//import { isDevMode } from '@angular/core';
-//import * as firebase from 'firebase/app';
 import { AuthService } from '../../app/auth/auth.service';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { User } from '../../app/shared/user.entity';
@@ -22,11 +19,9 @@ export class LoginRegister implements OnInit {
     public isLoginActive:boolean;
 
     ngOnInit(): void {
-        // this.user.email = "";
-        // this.user.password = "";
         this.isLoginActive = true;
-        this.user.email = "test@test.com";
-        this.user.password = "123456";
+        // this.user.email = "test@test.com";
+        // this.user.password = "123456";
     }
 
     constructor(public navCtrl: NavController, public db: AngularFireDatabase, public authService: AuthService) {
@@ -38,7 +33,6 @@ export class LoginRegister implements OnInit {
     }
 
     public tabChange($event){
-        // console.log("tabchange",$event);
         this.isLoginActive = $event;
     }
 
@@ -46,12 +40,12 @@ export class LoginRegister implements OnInit {
         this.authService.googleLogin();
     }
 
-    public submitForm($user){
-        // console.log("sumit from login register",$user);
+    public EmailPasswordRegister($user){
+        console.log("EmailPasswordRegister",$user);
     }
 
-    public login() {
-        // console.log("login",this.user);
+    public EmailPasswordLogin($user) {
+        console.log("login",$user);
         // this.authService.withEmailAndPasswordLogin(this.user.email, this.user.password);
     }
 

@@ -15,10 +15,10 @@
 
         <ion-card-content>
             <div *ngIf="isLoginActive">
-                <login-form [user]="user" (onSubmit)="submitForm($event)"></login-form>
+                <login-form [user]="user" (onSubmit)="EmailPasswordLogin($event)"></login-form>
             </div>
             <ion-list *ngIf="!isLoginActive">
-                <register-form [user]="user"  (onSubmit)="submitForm($event)"></register-form>
+                <register-form [user]="user"  (onSubmit)="EmailPasswordRegister($event)"></register-form>
             </ion-list>
             <div>
                 <ion-item-divider></ion-item-divider>
