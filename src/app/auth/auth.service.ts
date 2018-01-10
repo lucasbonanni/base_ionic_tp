@@ -6,19 +6,34 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { ConsoleMessagesProvider } from '../../providers/console-messages/console-messages';
 
 @Injectable()
 export class AuthService {
-  isLoggedIn = false;
+
+  private _isLoggedIn : boolean;
+
+  public get isLoggedIn() : boolean {
+    return this._isLoggedIn;
+  }
+
+  public set isLoggedIn(v : boolean) {
+    this._isLoggedIn = v;
+  }
+  
 
   // store the URL so we can redirect after logging in
   // redirectUrl: string;
 
-  constructor(public afAuth: AngularFireAuth) {
+  public constructor(public afAuth: AngularFireAuth, public messageService: ConsoleMessagesProvider) {
+    this._isLoggedIn = false;
+    // this.messageService.consoleInfo(this.isLoggedIn);
   }
 
   login(): Observable<boolean> {
-    return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+    // this.messageService.consoleInfo("login",this.isLoggedIn);
+    // return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+    return Observable.of(true).delay(1000);
   }
 
   logout(): void {
@@ -30,7 +45,6 @@ export class AuthService {
       if (user) {
         //User data managment?
 
-
         // User is signed in.
         // var displayName = user.displayName;
         // var email = user.email;
@@ -40,12 +54,11 @@ export class AuthService {
         // var uid = user.uid;
         // var providerData = user.providerData;
         // ...
-        this.isLoggedIn = true;
+        // this.isLoggedIn = true;
       } else {
         // User is signed out.
         // ...
-        console.log("deslogueado");
-        this.isLoggedIn = false;
+        // this.isLoggedIn = false;
       }
     });
   }
@@ -61,7 +74,7 @@ export class AuthService {
         // Handle Errors here.
         // var errorCode = error.code;
         // var errorMessage = error.message;
-        console.log(error);
+        this.messageService.consoleInfo(error,this);
     });
 }
 
