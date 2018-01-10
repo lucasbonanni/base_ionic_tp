@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../shared/user.entity';
 
@@ -19,8 +19,8 @@ import { User } from '../shared/user.entity';
     </form>`
 })
 
-export class LoginFormComponent implements OnInit {
-
+export class LoginFormComponent{
+    
     private login : FormGroup;
 
     @Input() user : User;
@@ -35,11 +35,7 @@ export class LoginFormComponent implements OnInit {
         this.onSubmit = new EventEmitter<User>();
      }
 
-    ngOnInit() {
-        // console.log("user",this.user);
-     }
-
-     public submit(){
+    public submit(){
          this.onSubmit.emit(this.user);
     }
 }
