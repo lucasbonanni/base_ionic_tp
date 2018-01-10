@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../app/auth/auth.service';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { User } from '../../app/shared/user.entity';
+import { ConsoleMessagesProvider } from '../../providers/console-messages/console-messages';
 
 
 @Component({
@@ -24,7 +25,12 @@ export class LoginRegister implements OnInit {
         // this.user.password = "123456";
     }
 
-    constructor(public navCtrl: NavController, public db: AngularFireDatabase, public authService: AuthService) {
+    public constructor(
+        public navCtrl: NavController, 
+        public db: AngularFireDatabase, 
+        public authService: AuthService, 
+        private messageService: ConsoleMessagesProvider) 
+    {
         this.itemsRef = db.list('List');
         // If we navigated to this page, we will have an item available as a nav param
         this.items = this.itemsRef.valueChanges();
@@ -41,11 +47,11 @@ export class LoginRegister implements OnInit {
     }
 
     public EmailPasswordRegister($user){
-        console.log("EmailPasswordRegister",$user);
+        this.messageService.debbugInfo("EmailPasswordRegister",$user);
     }
 
     public EmailPasswordLogin($user) {
-        console.log("login",$user);
+        this.messageService.debbugInfo("login",$user,"asdlfkj", this.items);
         // this.authService.withEmailAndPasswordLogin(this.user.email, this.user.password);
     }
 
