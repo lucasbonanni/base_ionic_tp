@@ -19,6 +19,7 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { LoginRegisterTabsComponent } from './login-register-tabs/login-register-tabs.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register.form.component';
+import { ConsoleMessagesProvider } from '../providers/console-messages/console-messages';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { RegisterFormComponent } from './register-form/register.form.component';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     AuthGuard,
+    ConsoleMessagesProvider,
   ]
 })
 export class AppModule {}
