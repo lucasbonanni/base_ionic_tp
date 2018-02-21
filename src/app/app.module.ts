@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { AngularFireModule } from 'angularfire2';
-import { firebaseConfig } from '../enviroment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -20,6 +19,7 @@ import { LoginRegisterTabsComponent } from './login-register-tabs/login-register
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register.form.component';
 import { ConsoleMessagesProvider } from '../providers/console-messages/console-messages';
+import { firebaseConfig } from '../environments/environment';
 
 
 @NgModule({

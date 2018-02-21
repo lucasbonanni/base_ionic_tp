@@ -1,3 +1,8 @@
+
+export const environment = {
+        production: false
+};
+
 export const firebaseConfig = {
         apiKey: '<your-key>',
         authDomain: '<your-project-authdomain>',
@@ -6,5 +11,3 @@ export const firebaseConfig = {
         storageBucket: '<your-storage-bucket>',
         messagingSenderId: '<your-messaging-sender-id>'
 };
-
-
