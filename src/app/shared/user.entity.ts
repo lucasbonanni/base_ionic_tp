@@ -11,8 +11,9 @@ export class User implements UserInfo {
     uid: string;
     public password:string;
 
-    public constructor(){
-        this.email ="";
+    public constructor(name,email){
+        this.name = name;
+        this.email =email;
     }
 
     

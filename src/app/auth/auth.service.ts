@@ -64,7 +64,24 @@ export class AuthService {
   }
 
   public googleLogin() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(result => console.log(result));
+    
+    this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then(function() {
+      this.afAuth.auth.getRedirectResult().then(function(result) {
+        // This gives you a Google Access Token.
+        // You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        this.isLoggedIn = true;
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+    }).catch(function(error){
+      alert(error)
+    });
   }
 
 
@@ -81,6 +98,7 @@ export class AuthService {
 public registerWithEmailAndPassword(email: string, password: string) {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     .catch(function (error) {
+        alert(error);
         // Handle Errors here.
         // var errorCode = error.code;
         // var errorMessage = error.message;

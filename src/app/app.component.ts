@@ -13,7 +13,7 @@ import { LoginRegister } from '../pages/login-register/login-register';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginRegister;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,7 +24,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginRegister }
+      // { title: 'Login', component: LoginRegister }
     ];
 
   }

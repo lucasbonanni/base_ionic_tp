@@ -20,6 +20,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register.form.component';
 import { ConsoleMessagesProvider } from '../providers/console-messages/console-messages';
 import { firebaseConfig } from '../environments/environment';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { firebaseConfig } from '../environments/environment';
     AuthService,
     AuthGuard,
     ConsoleMessagesProvider,
+    AuthServiceProvider,
   ]
 })
 export class AppModule {}
