@@ -22,6 +22,7 @@ import { ConsoleMessagesProvider } from '../providers/console-messages/console-m
 import { firebaseConfig } from '../environments/environment';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { ChatPage } from '../pages/chat/chat';
+import { DataFireProvider } from '../providers/data-fire/data-fire';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { ChatPage } from '../pages/chat/chat';
     AuthGuard,
     ConsoleMessagesProvider,
     AuthServiceProvider,
+    DataFireProvider,
   ]
 })
 export class AppModule {}
