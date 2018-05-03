@@ -8,6 +8,12 @@
 
   <ion-navbar>
     <ion-title>chat</ion-title>
+    <ion-buttons end>
+        <button ion-button  clear icon-right (click)="logout()">
+          Cerrar Session 
+          <ion-icon name="md-exit"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -28,7 +34,8 @@
         <ion-note item-end>3:43 pm</ion-note>
       </ion-item>
       <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!
+          Whoa. This is heavy.</p>
       </ion-card-content>
     </ion-card>
     <ion-card>
@@ -41,7 +48,7 @@
         <ion-note item-end>5:01 am</ion-note>
       </ion-item>
       <ion-card-content>
-          <p>This isn't the reality.</p>
+        <p>This isn't the reality.</p>
       </ion-card-content>
     </ion-card>
 

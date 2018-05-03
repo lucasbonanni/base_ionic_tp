@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginRegister } from '../pages/login-register/login-register';
 import { ChatPage } from '../pages/chat/chat';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +19,11 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private auth: AuthServiceProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -38,6 +43,19 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    this.auth.afAuth.authState
+    .subscribe(
+      user => {
+        if (user) {
+          this.rootPage = ChatPage;
+        } else {
+          this.rootPage = LoginRegister;
+        }
+      },
+      () => {
+        this.rootPage = LoginRegister;
+      }
+    );
   }
 
   openPage(page) {

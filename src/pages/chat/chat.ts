@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { LoginRegister } from '../login-register/login-register';
 
 /**
  * Generated class for the ChatPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChatPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private auth: AuthServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatPage');
   }
 
+  public logout() {
+    this.auth.signOut().then(() => {
+      this.navCtrl.setRoot(LoginRegister)
+    });
+  }
 }

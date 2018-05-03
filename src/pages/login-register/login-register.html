@@ -1,12 +1,3 @@
-<!-- <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Login / register</ion-title>
-    </ion-navbar>
-</ion-header> -->
-
 <ion-content padding>
     <ion-card id="card-login">
         <ion-card-header>
@@ -15,17 +6,17 @@
 
         <ion-card-content>
             <div *ngIf="isLoginActive">
-                <login-form [user]="user" (onSubmit)="EmailPasswordLogin($event)"></login-form>
+                <login-form [user]="registerCredentials" (onSubmit)="login()"></login-form>
             </div>
             <ion-list *ngIf="!isLoginActive">
-                <register-form [user]="user"  (onSubmit)="EmailPasswordRegister($event)"></register-form>
+                <register-form [user]="registerCredentials"  (onSubmit)="EmailPasswordRegister()"></register-form>
             </ion-list>
             <div>
                 <ion-item-divider></ion-item-divider>
-                <button ion-button icon-only>
+                <button ion-button icon-only (click)="loginWithGithub()">
                     <ion-icon name="logo-github"></ion-icon>
                 </button>
-                <button ion-button icon-only (click)="googleLogin()">
+                <button ion-button icon-only (click)="loginWithGoogle()">
                     <ion-icon name="logo-googleplus"></ion-icon>
                 </button>
                 <button ion-button icon-only>
