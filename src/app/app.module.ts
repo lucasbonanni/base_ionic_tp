@@ -21,6 +21,7 @@ import { RegisterFormComponent } from './register-form/register.form.component';
 import { ConsoleMessagesProvider } from '../providers/console-messages/console-messages';
 import { firebaseConfig } from '../environments/environment';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { ChatPage } from '../pages/chat/chat';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     LoginRegister,
     LoginRegisterTabsComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     ListPage,
-    LoginRegister
+    LoginRegister,
+    ChatPage
   ],
   providers: [
     StatusBar,

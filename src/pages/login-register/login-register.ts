@@ -8,6 +8,7 @@ import { User } from '../../app/shared/user.entity';
 import { ConsoleMessagesProvider } from '../../providers/console-messages/console-messages';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HomePage } from '../home/home';
+import { ChatPage } from '../chat/chat';
 
 
 @Component({
@@ -74,7 +75,7 @@ export class LoginRegister implements OnInit {
         this.auth.login(this.user).subscribe(allowed => {
           if (allowed) {        
             // this.nav.setRoot(HomePage);
-            this.nav.push(HomePage);
+            this.nav.setRoot(ChatPage);
           } else {
             this.showError("No tiene acceso");
           }
