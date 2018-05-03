@@ -40,7 +40,7 @@ export class RegisterFormComponent {
         });
         this.onSubmit = new EventEmitter<User>();
         if(!this.user){
-            this.user = new User();
+            this.user = new User('','');
         }
     }
 
