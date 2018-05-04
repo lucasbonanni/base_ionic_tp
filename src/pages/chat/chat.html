@@ -20,12 +20,8 @@
 
 
 <ion-content padding>
-  <!-- <ion-card> -->
   <ion-list>
-    <!-- <ion-item *ngFor="let  of " (click)="" >
-        {{}}
-      </ion-item> -->
-    <ion-card>
+    <!-- <ion-card>
       <ion-item>
         <ion-avatar item-left>
           <img src="https://loremflickr.com/320/240/profile?random=1">
@@ -44,12 +40,24 @@
           <img src="https://loremflickr.com/320/240/profile?random=2">
         </ion-avatar>
         <h2>Neo</h2>
-        <!-- <p>This isn't the reality</p> -->
         <ion-note item-end>5:01 am</ion-note>
       </ion-item>
       <ion-card-content>
         <p>This isn't the reality.</p>
       </ion-card-content>
+    </ion-card> -->
+    <ion-card *ngFor="let msg of messages | async">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="https://loremflickr.com/320/240/profile?random=2">
+        </ion-avatar>
+        <h2>{{msg.sender}}</h2>
+        <ion-note item-end>{{msg.date | date:'short' }}</ion-note>
+      </ion-item>
+      <ion-card-content>
+        <p>{{msg.messageText}}</p>
+      </ion-card-content>
+      
     </ion-card>
 
     <!-- <ion-item-divider></ion-item-divider> -->
@@ -58,32 +66,33 @@
   </ion-list>
 
   <!-- </ion-card> -->
-  <ion-footer>
-    <ion-row>
-      <ion-col col-8>
-        <ion-item>
-          <ion-input type="text"></ion-input>
 
-        </ion-item>
-      </ion-col>
-      <ion-col col-2>
-        <button ion-button clear icon-only>
-          <ion-icon name="image"></ion-icon>
-        </button>
-      </ion-col>
-      <ion-col col-2>
-        <ion-fab right bottom>
-          <button ion-fab color="secondary">
-            <ion-icon name="play"></ion-icon>
-          </button>
-        </ion-fab>
-      </ion-col>
-    </ion-row>
-
-
-    <!-- <button ion-button icon-only >
-      <ion-icon name="return-right"></ion-icon>
-    </button> -->
-
-  </ion-footer>
 </ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col col-8>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="newMessage.messageText"></ion-input>
+
+      </ion-item>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button clear icon-only>
+        <ion-icon name="image"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-2>
+      <ion-fab right bottom>
+        <button ion-fab color="secondary" (click)="pushMessage()">
+          <ion-icon name="play"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- <button ion-button icon-only >
+    <ion-icon name="return-right"></ion-icon>
+  </button> -->
+
+</ion-footer>

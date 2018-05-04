@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -23,6 +22,7 @@ import { firebaseConfig } from '../environments/environment';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { ChatPage } from '../pages/chat/chat';
 import { DataFireProvider } from '../providers/data-fire/data-fire';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { DataFireProvider } from '../providers/data-fire/data-fire';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig,'my-app-name'),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
   ],
@@ -60,6 +60,7 @@ import { DataFireProvider } from '../providers/data-fire/data-fire';
     ConsoleMessagesProvider,
     AuthServiceProvider,
     DataFireProvider,
+    AngularFirestore
   ]
 })
 export class AppModule {}
