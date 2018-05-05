@@ -5,10 +5,10 @@ import { Output } from '@angular/core';
     selector: 'login-register-tabs',
     template: `<ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" [ngClass]="{active:isLoginActive}" (click)="selectTab()" href="#">Login</a>
+        <a class="nav-link" [ngClass]="{active:isLoginActive}" (click)="selectTab()" href="#">Loguearse</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" [ngClass]="{active:!isLoginActive}" (click)="selectTab()" href="#">Register</a>
+        <a class="nav-link" [ngClass]="{active:!isLoginActive}" (click)="selectTab()" href="#">Registrarse</a>
     </li>
     </ul>`,
     styleUrls: ["/login-register-tabs.scss"]

@@ -7,15 +7,15 @@ import { User } from '../shared/user.entity';
     template: `
     <form [formGroup]="login" (ngSubmit)="submit()" #loginForm="ngForm">
         <ion-item>
-            <ion-label floating>E-mail</ion-label>
+            <ion-label floating>Correo</ion-label>
             <ion-input type="email" formControlName="email" [(ngModel)]="user.email"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Password</ion-label>
+            <ion-label floating>Contraseña</ion-label>
             <ion-input type="password" formControlName="password" [(ngModel)]="user.password"></ion-input>
         </ion-item>
         <!--span>{{login.status}} - {{login.controls['email'].valid}}</span-->
-        <button ion-button block medium type="submit" [disabled]="!loginForm.form.valid">Login</button>
+        <button ion-button block medium type="submit" [disabled]="!loginForm.form.valid">Inciar sesion</button>
     </form>`
 })
 

@@ -11,15 +11,15 @@ import { User } from '../shared/user.entity';
             <ion-input type="text" [(ngModel)]="user.name" formControlName="name" autocomplete="on"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>email</ion-label>
+            <ion-label floating>Correo</ion-label>
             <ion-input type="email" [(ngModel)]="user.email" formControlName="email" autocomplete="on"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Password</ion-label>
+            <ion-label floating>Contraseña</ion-label>
             <ion-input type="password" [(ngModel)]="user.password" formControlName="password"></ion-input>
         </ion-item>
-        <button ion-button block medium type="submit" [disabled]="!registerForm.form.valid">register</button>
+        <button ion-button block medium type="submit" [disabled]="!registerForm.form.valid">Registrarse</button>
     </form>`
 })
 
