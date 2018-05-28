@@ -23,6 +23,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { ChatPage } from '../pages/chat/chat';
 import { DataFireProvider } from '../providers/data-fire/data-fire';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { BusyLoaderProvider } from '../providers/busy-loader/busy-loader';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
     ConsoleMessagesProvider,
     AuthServiceProvider,
     DataFireProvider,
-    AngularFirestore
+    AngularFirestore,
+    BusyLoaderProvider
   ]
 })
 export class AppModule {}
