@@ -7,6 +7,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginRegister } from '../pages/login-register/login-register';
 import { ChatPage } from '../pages/chat/chat';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { BusyLoaderProvider } from '../providers/busy-loader/busy-loader';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,12 +18,13 @@ export class MyApp {
   rootPage: any = LoginRegister;
 
   pages: Array<{title: string, component: any}>;
-
+  splash: boolean = true;
   constructor(
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    private auth: AuthServiceProvider) {
+    private auth: AuthServiceProvider,
+    private busyLoader: BusyLoaderProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -36,11 +38,16 @@ export class MyApp {
   }
 
   initializeApp() {
+    this.busyLoader.showBusyLoader();
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      setTimeout(() => {
+        this.splash = false
+        this.busyLoader.dismissBusyLoader();
+      }, 3000);
     });
     this.auth.afAuth.authState
     .subscribe(
