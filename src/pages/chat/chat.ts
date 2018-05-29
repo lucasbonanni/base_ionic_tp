@@ -4,6 +4,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginRegister } from '../login-register/login-register';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { User } from '@firebase/auth-types';
 
 
 export class Message {
@@ -29,7 +30,8 @@ export class ChatPage implements OnInit {
   public messages :Observable<Message[]>;
   public messagesRef : AngularFireList<Message>;
   public newMessage: Message;
-
+  user: User;
+  displayName: string = '';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,12 +40,13 @@ export class ChatPage implements OnInit {
     this.newMessage = new Message();
   }
   ngOnInit(): void {
+    this.user = this.auth.getUserInfo();
+    this.displayName = this.user.displayName;
     this.messagesRef = this.db.list<Message>('List');
     this.messages = this.messagesRef.valueChanges();
     console.log(this.messagesRef);
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ChatPage');
   }
 
   public logout() {
@@ -52,6 +55,7 @@ export class ChatPage implements OnInit {
     });
   }
 
+  
   public pushMessage(){
     if(this.newMessage.messageText != ''){
       const date = new Date();
@@ -61,4 +65,6 @@ export class ChatPage implements OnInit {
     }
     this.newMessage.messageText = '';
   }
+
+
 }
