@@ -42,7 +42,7 @@ export class ChatPage implements OnInit {
   ngOnInit(): void {
     this.user = this.auth.getUserInfo();
     this.displayName = this.user.displayName;
-    this.messagesRef = this.db.list<Message>('List');
+    this.messagesRef = this.db.list<Message>('List/4a');
     this.messages = this.messagesRef.valueChanges();
     console.log(this.messagesRef);
   }
@@ -60,11 +60,21 @@ export class ChatPage implements OnInit {
     if(this.newMessage.messageText != ''){
       const date = new Date();
       this.newMessage.date = date.toString();
-      this.newMessage.sender = 'Lucas';
+      this.newMessage.sender = this.displayName;
       this.messagesRef.push(this.newMessage);
     }
     this.newMessage.messageText = '';
   }
 
+
+  public chageToClass4b(){
+    this.messagesRef = this.db.list<Message>('List/4b');
+    this.messages = this.messagesRef.valueChanges();
+  }
+
+  public chageToClass4a(){
+    this.messagesRef = this.db.list<Message>('List/4a');
+    this.messages = this.messagesRef.valueChanges();
+  }
 
 }
