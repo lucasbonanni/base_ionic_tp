@@ -64,7 +64,7 @@
                     <img src="https://loremflickr.com/320/240/profile?random=2">
                 </ion-avatar>
                 <h2>{{msg.sender}}</h2>
-                <ion-note item-end>{{msg.date | date:'short' }}</ion-note>
+                <ion-note item-end>{{msg.date | lastSendTime }}</ion-note>
             </ion-item>
             <ion-card-content>
                 <p>{{msg.messageText}}</p>

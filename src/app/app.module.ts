@@ -24,6 +24,7 @@ import { ChatPage } from '../pages/chat/chat';
 import { DataFireProvider } from '../providers/data-fire/data-fire';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { BusyLoaderProvider } from '../providers/busy-loader/busy-loader';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { BusyLoaderProvider } from '../providers/busy-loader/busy-loader';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
