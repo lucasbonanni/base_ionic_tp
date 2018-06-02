@@ -1,8 +1,25 @@
 page-chat {
+    .content-md {
+        background: rgb(237, 224, 109);
+        background: -moz-linear-gradient(-45deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        background: -webkit-linear-gradient(-45deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        background: linear-gradient(135deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede06d', endColorstr='#0ffcd0', GradientType=1);
+    }
+    .toolbar-background {
+        background: rgb(237, 224, 109);
+        background: -moz-linear-gradient(-45deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        background: -webkit-linear-gradient(-45deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        background: linear-gradient(135deg, rgba(237, 224, 109, 1) 0%, rgba(157, 213, 58, 1) 33%, rgba(15, 252, 208, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede06d', endColorstr='#0ffcd0', GradientType=1);
+    }
     ion-note {
         font-size: 12px;
         align-self: flex-start;
         margin-top: 14px;
+    }
+    .card .note-md {
+        color: #b00000;
     }
     ion-fab[bottom] {
         bottom: 5px;
@@ -69,13 +86,15 @@ page-chat {
         margin: 10px;
         border-radius: 2px;
         width: calc(100% - 20px);
-        font-size: 1.4rem;
-        background: rgba(240, 195, 111, 0.562);
+        font-size: 1.4rem; // background: rgba(240, 195, 111, 0.562);
+        background: rgba(111, 193, 240, 0.548);
         -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 15px;
     }
     .scroll-content {
         background-color: antiquewhite;
+        background-image: url('../assets/imgs/background.jpg');
     }
     .segment-md .segment-button:first-of-type {
         border-top-left-radius: 4px;
@@ -99,12 +118,14 @@ page-chat {
         // font-size: 1.2rem;
         // line-height: 2.5rem;
     }
-    .segment-md .segment-button{
-        border-bottom-color:#488aff;
+    .segment-md .segment-button {
+        border-bottom-color: #488aff;
     }
     .toolbar .segment-button {
         height: 2.6rem;
         font-size: 1.2rem;
         line-height: 2.5rem;
-    }
+    } // .card-md{
+    //     border-radius:15px;
+    // }
 }

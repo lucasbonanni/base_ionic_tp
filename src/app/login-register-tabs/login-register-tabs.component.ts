@@ -5,7 +5,7 @@ import { Output } from '@angular/core';
     selector: 'login-register-tabs',
     template: `<ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" [ngClass]="{active:isLoginActive}" (click)="selectTab()" href="#">Loguearse</a>
+        <a class="nav-link" [ngClass]="{active:isLoginActive}" (click)="selectTab()" href="#">Iniciar sesión</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" [ngClass]="{active:!isLoginActive}" (click)="selectTab()" href="#">Registrarse</a>

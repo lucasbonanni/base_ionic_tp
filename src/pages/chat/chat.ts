@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginRegister } from '../login-register/login-register';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
@@ -39,8 +39,7 @@ export class ChatPage implements OnInit {
     public navCtrl: NavController,
     public navParams: NavParams,
     private auth: AuthServiceProvider,
-    private db: AngularFireDatabase,
-    private platform: Platform) {
+    private db: AngularFireDatabase) {
     this.newMessage = new Message();
   }
   ngOnInit(): void {

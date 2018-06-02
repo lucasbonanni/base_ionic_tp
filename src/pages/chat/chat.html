@@ -7,28 +7,31 @@
 <ion-header class="header header-ios">
 
     <ion-navbar>
-        <ion-title>Bienvenido {{displayName}}!!</ion-title>
-        <ion-title text-center>Sala - {{salaValue}}</ion-title>
-        <ion-buttons end>
-            <button ion-button clear icon-right (click)="logout()">
-                Cerrar Sesión
-                <ion-icon name="md-exit"></ion-icon>
-            </button>
-        </ion-buttons>
+        <ion-row>
+            <ion-navbar >
+                    <ion-title>{{displayName}}!!</ion-title>
+                    <ion-buttons end>
+                            <button ion-button clear icon-right (click)="logout()">
+                                    Cerrar Sesión
+                                    <ion-icon name="md-exit"></ion-icon>
+                                </button>
+                    </ion-buttons>
+            </ion-navbar>
+        </ion-row>
+        <ion-row>
+            <ion-title text-center>Sala - {{salaValue}}</ion-title>
+        </ion-row>
+        <ion-row>
+            <ion-segment>
+                <ion-segment-button value="puppies" (click)="chageToClass4a()">
+                    4A
+                </ion-segment-button>
+                <ion-segment-button value="kittens" (click)="chageToClass4b()">
+                    4B
+                </ion-segment-button>
+            </ion-segment>
+        </ion-row>
     </ion-navbar>
-    <ion-toolbar class="toolbar toolbar-ios" no-border-top padding>
-        <ion-segment>
-            <ion-segment-button value="puppies" (click)="chageToClass4a()">
-                4A
-            </ion-segment-button>
-            <ion-segment-button value="kittens" (click)="chageToClass4b()">
-                4B
-            </ion-segment-button>
-            <!-- <ion-segment-button value="ducklings">
-                Ducklings
-            </ion-segment-button> -->
-        </ion-segment>
-    </ion-toolbar>
 </ion-header>
 
 
@@ -43,11 +46,11 @@
 
             </ion-item>
             <ion-item *ngIf="msg.sender == displayName">
-                    <ion-avatar item-right>
-                        <img [src]="msg.profilePhoto">
-                    </ion-avatar>
-                    <h2 text-right>{{msg.sender}}</h2>
-                </ion-item>
+                <ion-avatar item-right>
+                    <img [src]="msg.profilePhoto">
+                </ion-avatar>
+                <h2 text-right>{{msg.sender}}</h2>
+            </ion-item>
             <ion-card-content *ngIf="msg.sender != displayName">
 
                 <p>{{msg.messageText}}</p>
@@ -55,9 +58,9 @@
             </ion-card-content>
             <ion-card-content *ngIf="msg.sender == displayName">
 
-                    <p text-right>{{msg.messageText}}</p>
-                    <!-- <ion-note item-end>{{msg.date | lastSendTime }}</ion-note> -->
-                </ion-card-content>
+                <p text-right>{{msg.messageText}}</p>
+                <!-- <ion-note item-end>{{msg.date | lastSendTime }}</ion-note> -->
+            </ion-card-content>
             <ion-row>
                 <ion-col>
                     <ion-note item-end>
