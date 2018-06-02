@@ -47,6 +47,7 @@ export class ChatPage implements OnInit {
     this.displayName = this.user.displayName;
     this.messagesRef = this.db.list<Message>('List/4a');
     this.messages = this.messagesRef.valueChanges();
+    this.salaValue = '4A';
     // this.messagesRef.valueChanges().subscribe(next =>{
     //   this.messagesT = next;
     //   this.salaValue = '4A';

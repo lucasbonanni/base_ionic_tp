@@ -72,6 +72,7 @@ page-chat {
         box-shadow: none;
         -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
         transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 5px;
     }
     item-md item-input {
         background-color: white;
